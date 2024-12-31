@@ -1,9 +1,12 @@
 #ifndef DS_DSTCK_ARR_H
 # define DS_DSTCK_ARR_H
 
+# include <stdlib.h>
+# include <stdio.h>
+
 # define ARRSZ 10
 
-typedef stbuct	s_dstck
+typedef struct	s_dstck
 {
 	int	st[ARRSZ];
 	int	ta;
