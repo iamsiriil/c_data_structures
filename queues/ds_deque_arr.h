@@ -1,9 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef DS_QUEUE_ARR_H
+# define DS_QUEUE_ARR_H
 
-#define ARRSZ 10
-#define INC(i) (i + 1) % ARRSZ
-#define DEC(i) (i - 1 + ARRSZ) % ARRSZ
+# include <stdio.h>
+# include <stdlib.h>
+
+# define ARRSZ 10
+# define INC(i) (i + 1) % ARRSZ
+# define DEC(i) (i - 1 + ARRSZ) % ARRSZ
 
 typedef struct	s_deque
 {
@@ -67,4 +70,6 @@ void	ds_print_deque(t_deque *q)
 	for (int i = q->hd + 1; i != q->tl; i = INC(i))
 		printf("%d ", q->qu[i]);
 }
+
+#endif
 

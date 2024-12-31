@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ds_queue_arr_struct.c"
+#include "ds_queue_arr.h"
 
 void	ds_print_array(int *queue, int size)
 {

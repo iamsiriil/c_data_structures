@@ -1,9 +1,12 @@
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef DS_DEQUE_ARR_H
+# define DS_DEQUE_ARR_H
 
-#define ARRSZ 10
-#define INC(i) (i + 1) % ARRSZ
+# include <errno.h>
+# include <stdio.h>
+# include <stdlib.h>
+
+# define ARRSZ 10
+# define INC(i) (i + 1) % ARRSZ
 
 typedef struct	s_queue
 {
@@ -48,4 +51,6 @@ void	ds_print_queue(t_queue *q)
 	for (int i = q->hd; i != q->tl; i = INC(i))
 		printf("%d ", q->qu[i]);
 }
+
+#endif
 

@@ -1,7 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef DS_STACK_ARR_H
+# define DS_STACK_ARR_H
 
-#define ARRSZ 10
+# include <stdio.h>
+# include <stdlib.h>
+
+# define ARRSZ 10
 
 typedef struct	s_stack
 {
@@ -25,20 +28,16 @@ void	ds_push(t_stack *s, int n)
 		printf("stack overflow\n");
 		exit(EXIT_FAILURE);
 	}
-	s->tp += 1;
-	s->st[s->tp] = n;
+	s->st[++s->tp] = n;
 }
 
 int	ds_pop(t_stack *s)
 {
 	if (ds_isempty(s)) {
 		printf("stack underflow\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
-	int	n = s->st[s->tp];
-	s->st[s->tp] = 0;
-	s->tp -= 1;
-	return (n);
+	return (s->st[s->tp--]);
 }
 
 void	ds_print_stack(t_stack *s)
@@ -47,4 +46,6 @@ void	ds_print_stack(t_stack *s)
 		printf("%d ", s->st[i]);
 	printf("\n");
 }
+
+#endif
 
