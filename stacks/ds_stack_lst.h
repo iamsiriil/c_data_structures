@@ -39,18 +39,18 @@ t_node	*ds_pop(t_node **s)
 
 void	ds_print_stack(t_node *s)
 {
-	for (t_node *curr = s; curr != NULL; curr = curr->nx)
-		printf("%d ", curr->dt);
+	for (t_node *cr = s; cr != NULL; cr = cr->nx)
+		printf("%d ", cr->dt);
 	printf("\n");
 }
 
 void	ds_free_stack(t_node *s)
 {
-	t_node	*curr = s, *nx;
-	while (curr != NULL) {
-		nx = curr->nx;
-		free(curr);
-		curr = nx;
+	for (t_node *cr = s, *nx; cr != NULL; cr = nx) {
+		nx = cr->nx;
+		free(cr);
 	}
 }
+
 #endif
+
